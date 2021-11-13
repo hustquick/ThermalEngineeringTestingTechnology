@@ -29,7 +29,7 @@ a = float(np.exp(B_0))
 x_fit = np.linspace(min(x), max(x), 1000)
 y_fit = a * x_fit ** b
 plt.plot(x_fit, y_fit, 'r-', label='regression')
-plt.savefig('Exa3-16')
+plt.savefig('Exc3-16')
 x0, y0 = 20, a * 20 ** b
 plt.annotate(r"拟合的方程为：y = {:.3f}x^({:.3f})".format(float(a), float(b)), xy=(x0, y0), xytext=(+30, +30), textcoords='offset points', fontsize=10, arrowprops=dict(arrowstyle='->', connectionstyle='arc3, rad=.2'))
 plt.show()

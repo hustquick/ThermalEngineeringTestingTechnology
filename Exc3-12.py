@@ -1,8 +1,8 @@
-A_min = 1.2
-A_max = 2.5
-Delta = 0.01
+P_min = 0
+P_max = 20e6
+Delta = 0.01e6
 
-R = Delta / (A_max - A_min)
+R = Delta / (P_max - P_min)
 
 # 精度等级列表
 acc_list = [0.1, 0.2, 0.5, 1.0, 1.5, 2.5, 5.0]
@@ -19,5 +19,4 @@ def find_min_class(value, class_list):
             pass
     return classification
 
-
-print("该电流表的精度等级为{}级".format(find_min_class(R, acc_list)))
+print("该压力表的精度等级为{}级".format(find_min_class(R, acc_list)))
