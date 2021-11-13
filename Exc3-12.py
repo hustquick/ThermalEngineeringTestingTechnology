@@ -15,8 +15,7 @@ def find_min_class(value, class_list):
     for class_value in class_list[::-1]:
         if value * 100 <= class_value:
             classification = class_value
-        else:
-            pass
     return classification
+
 
 print("该压力表的精度等级为{}级".format(find_min_class(R, acc_list)))

@@ -15,8 +15,6 @@ def find_min_class(value, class_list):
     for class_value in class_list[::-1]:
         if value * 100 <= class_value:
             classification = class_value
-        else:
-            pass
     return classification
 
 
