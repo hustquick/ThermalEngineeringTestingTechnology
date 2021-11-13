@@ -25,4 +25,4 @@ D, max_nu = dev(x)
 if D <= max_nu:
     print("无显著的线性系统误差")
 else:
-    print("有线性系统误差")
+    print("有显著的线性系统误差")
