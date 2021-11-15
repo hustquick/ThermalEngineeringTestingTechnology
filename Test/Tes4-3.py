@@ -2,8 +2,8 @@ import numpy as np
 from scipy.optimize import fsolve
 
 T_1 = 20
-tau = 10
-t = 15
+tau = 8
+t = 10
 Delta_V = 4.321
 K_thermalelectric_protential = np.array([
     [0, 0],
