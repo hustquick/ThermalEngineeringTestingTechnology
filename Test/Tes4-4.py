@@ -1,8 +1,8 @@
 import numpy as np
 from scipy.optimize import fsolve
 
-E = 31.42
-Et = 6.18
+E = 23.45
+Et = 6.78
 
 T = fsolve(lambda T: 0.0107*T - 4.14 - Et, [1])[0]
 t = T - 273.15
