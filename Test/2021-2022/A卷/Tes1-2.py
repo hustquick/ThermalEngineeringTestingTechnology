@@ -1,10 +1,6 @@
 A_min = 0
 A_max = 2.5
-<<<<<<< HEAD
 Delta = 0.01
-=======
-Delta = 0.02
->>>>>>> origin/master
 
 R = Delta / (A_max - A_min)
 
