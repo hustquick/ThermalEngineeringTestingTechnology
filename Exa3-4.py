@@ -65,13 +65,13 @@ def use_Grubbs(x, alpha):
     sigma_caret = np.std(x, ddof=1)
     nu = x - x_bar
     if max(abs(max(nu)), abs(min(nu))) / sigma_caret < T:
-        print("上述{}个数据中不存在坏值！".format(len(x)))
+        print(f"上述{len(x)}个数据中不存在坏值！")
     elif abs(max(nu))  < abs(min(nu)):
-        print("删除坏值{}".format(x[np.argmin(nu)]))
+        print(f"删除坏值{x[np.argmin(nu)]}")
         x = np.delete(x, np.argmin(nu))
         use_Grubbs(x, alpha)
     else:
-        print("删除坏值{}".format(x[np.argmax(nu)]))
+        print(f"删除坏值{x[np.argmax(nu)]}")
         x = np.delete(x, np.argmax(nu))
         use_Grubbs(x, alpha)
 
