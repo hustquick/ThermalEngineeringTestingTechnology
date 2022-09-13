@@ -1,13 +1,19 @@
-import numpy as np
+from scipy.stats import norm
 
-x = np.array([102.25, 101.84, 102.15, 102.27, 101.85,
-              102.22, 102.05, 102.15, 101.97, 102.13])
 
-x_bar = np.mean(x)
-sigma_caret = np.std(x, ddof=1)
-s = sigma_caret / np.sqrt(len(x))
-lambda_lim = 3 * s
-delta_lim = lambda_lim / x_bar
+def table3_1_a(k):
+    """
+    给定k值求2*phi(k)的值，即测量误差落在(-k*sigma, k*sigma)的概率
+    """
+    return norm.cdf(k) - norm.cdf(-k)
 
-print(f"测量结果为：({x_bar:.3f} \pm {lambda_lim:.3f}) m/s"
-      f"\n或:{x_bar:.3f} m/s \pm {delta_lim:.2%}")
+
+def table3_1_b(p):
+    """
+    给定2*phi(k)的值求k值，即已知置信度，求解k值
+    """
+    return norm.ppf((1+p)/2)
+
+
+result = norm.cdf(2.4) - norm.cdf(-1.6)
+print(f"结果为：{result:.4%}")

@@ -18,4 +18,4 @@ def find_min_class(value, class_list):
     return classification
 
 
-print("该电流表的精度等级为{}级".format(find_min_class(R, acc_list)))
+print(f"该电流表的精度等级为{find_min_class(R, acc_list)}级")

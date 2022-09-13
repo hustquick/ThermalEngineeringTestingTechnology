@@ -1,11 +1,6 @@
 # 利用格拉布斯准则去除疏失误差引起的坏值
 import numpy as np
 
-x = np.array([20.42, 20.43, 20.40, 20.43, 20.42,
-              20.43, 20.39, 20.30, 20.40, 20.43,
-              20.42, 20.41, 20.39, 20.39, 20.40])
-
-
 # Table 3-2
 def Grubbs_Table(n, alpha):
     table = np.array([[1.15, 1.15, 1.15],
@@ -75,5 +70,9 @@ def use_Grubbs(x, alpha):
         x = np.delete(x, np.argmax(nu))
         use_Grubbs(x, alpha)
 
+
+x = np.array([20.42, 20.43, 20.40, 20.43, 20.42,
+              20.43, 20.39, 20.30, 20.40, 20.43,
+              20.42, 20.41, 20.39, 20.39, 20.40])
 
 use_Grubbs(x, alpha)
