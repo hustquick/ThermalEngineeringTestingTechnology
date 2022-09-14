@@ -9,5 +9,5 @@ s = stdev / np.sqrt(len(x))
 lambda_lim = 3 * s
 delta_lim = lambda_lim / x_bar
 
-print("测量结果为：({:.2f} \pm {:.2f}) r/min"
-      "\n或:{:.2f} r/min \pm {:.2%}".format(x_bar, lambda_lim, x_bar, delta_lim))
+print(f"测量结果为：({x_bar:.2f} \pm {lambda_lim:.2f}) r/min"
+      f"\n或:{x_bar:.2f} r/min (\pm {delta_lim:.2%})")

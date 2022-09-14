@@ -46,4 +46,4 @@ def T(T_f):
 
 
 T_f = fsolve(T, np.array([200]))[0]
-print("炉内实际温度为：{:.2f}°C".format(T_f))
+print(f"炉内实际温度为：{T_f:.2f}°C")

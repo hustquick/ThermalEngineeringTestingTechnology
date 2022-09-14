@@ -1,8 +1,5 @@
+# 写完代码后，重新移动已知参数的位置，使后续改变参数更加方便
 import numpy as np
-
-
-x = np.array([47.4, 47.5, 47.8, 47.7, 47.8,
-              47.3, 47.6, 47.9, 47.7, 47.4])
 
 
 def dev(l):
@@ -17,6 +14,9 @@ def dev(l):
         nu2 = nu[int(le+1)//2:]
     return sum(nu1) - sum(nu2), max(max(abs(nu1)), max(abs(nu2)))
 
+
+x = np.array([47.4, 47.5, 47.8, 47.7, 47.8,
+              47.3, 47.6, 47.9, 47.7, 47.4])
 
 D, max_nu = dev(x)
 

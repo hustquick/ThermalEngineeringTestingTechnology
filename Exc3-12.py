@@ -18,4 +18,5 @@ def find_min_class(value, class_list):
     return classification
 
 
-print("该压力表的精度等级为{}级".format(find_min_class(R, acc_list)))
+min_class = find_min_class(R, acc_list)
+print(f"该压力表的精度等级为{min_class}级")

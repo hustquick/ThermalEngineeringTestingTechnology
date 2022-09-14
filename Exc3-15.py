@@ -20,6 +20,5 @@ P_p_R = float(diff(P, R).subs(R, R_a).subs(U, U_a))
 S_P = np.sqrt(P_p_U**2 * S_U**2 + P_p_R**2 * S_R**2)
 lambda_P = 3 * S_P
 delta_P = lambda_P / P_a
-print("电功率的测量结果为：({P_a:.2f} \pm {lambda_P:.2f}) W"
-      "或{P_a:.2f} W \pm {delta_P:.2%}".format
-      (P_a=P_a, lambda_P=lambda_P, delta_P=delta_P))
+print(f"电功率的测量结果为：({P_a:.2f} \pm {lambda_P:.2f}) W"
+      f"或{P_a:.2f} W \pm {delta_P:.2%}")

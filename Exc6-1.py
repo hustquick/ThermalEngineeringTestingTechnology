@@ -34,10 +34,10 @@ epsilon_list = Ma_epsilon_table[:, 1]
 epsilon = np.interp(Ma, Ma_list, epsilon_list)
 v = zeta * np.sqrt(2 * delta_p / (rho * (1+epsilon)))
 
-print('(1) 空气可压缩时，空气的流速为：{:.2f} m/s'.format(v))
-print('(2) 空气不可压缩时，空气的流速为：{:.2f} m/s'.format(v_i))
+print(f'(1) 空气可压缩时，空气的流速为：{v:.2f} m/s')
+print(f'(2) 空气不可压缩时，空气的流速为：{v_i:.2f} m/s')
 
 M = 29e-3
 v_c = np.sqrt(kappa * R/M * T)
 v_r = Ma * v_c
-print('(3) 由马赫数算得的空气可压缩时，空气的流速为：{:.2f} m/s'.format(v_r))
+print(f'(3) 由马赫数算得的空气可压缩时，空气的流速为：{v_r:.2f} m/s')

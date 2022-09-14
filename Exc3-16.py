@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import linear_model
 
+plt.rcParams['font.sans-serif'] = 'Arial Unicode MS'
+plt.rcParams['axes.unicode_minus'] = False
+
 x = np.array([10, 15, 20, 25, 30,
               35, 40, 45, 50, 55,
               60, 65, 70, 75, 80])
@@ -20,19 +23,21 @@ X = X.reshape(-1, 1)
 Y = Y.reshape(-1, 1)
 reg = linear_model.LinearRegression()
 reg.fit(X, Y)
-B_1 = reg.coef_
-B_0 = reg.intercept_
+B_1 = float(reg.coef_)
+B_0 = float(reg.intercept_)
 R = np.sqrt(reg.score(X, Y))
-b = float(B_1)
-a = float(np.exp(B_0))
+b = B_1
+a = np.exp(B_0)
 
 x_fit = np.linspace(min(x), max(x), 1000)
 y_fit = a * x_fit ** b
 plt.plot(x_fit, y_fit, 'r-', label='regression')
-plt.savefig('Exc3-16')
 x0, y0 = 20, a * 20 ** b
-plt.annotate(r"拟合的方程为：y = {:.3f}x^({:.3f})".format(float(a), float(b)), xy=(x0, y0), xytext=(+30, +30), textcoords='offset points', fontsize=10, arrowprops=dict(arrowstyle='->', connectionstyle='arc3, rad=.2'))
+plt.annotate(fr"拟合的方程为：y = {a:.3f}x^({b:.3f})", xy=(x0, y0), xytext=(+30, +30),
+             textcoords='offset points', fontsize=10,
+             arrowprops=dict(arrowstyle='->', connectionstyle='arc3, rad=.2'))
+plt.savefig('Exc3-16.png')
 plt.show()
 plt.close()
-print("拟合的方程为：y = {:.3f}x^({:.3f})".format(float(a), float(b)))
-print("X和Y的相关系数R={:.3f}".format(R))
+print(f"拟合的方程为：y = {a:.3f}x^({b:.3f})")
+print(f"X和Y的相关系数R={R:.3f}")

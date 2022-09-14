@@ -79,13 +79,13 @@ def use_r(x, alpha):
     rn = r_n(x)
     r1 = r_1(x)
     if rn < r_0 and r1 < r_0:
-        print("上述{}个数据中不存在坏值！".format(len(x)))
+        print(f"上述{len(x)}个数据中不存在坏值！")
     elif rn < r1:
-        print("删除坏值{}".format(x[0]))
+        print(f"删除坏值{x[0]}")
         x = np.delete(x, 0)
         use_r(x, alpha)
     else:
-        print("删除坏值{}".format(x[-1]))
+        print(f"删除坏值{x[-1]}")
         x = np.delete(x, -1)
         use_r(x, alpha)
 
