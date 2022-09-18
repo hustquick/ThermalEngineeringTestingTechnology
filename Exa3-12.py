@@ -24,7 +24,7 @@ plt.plot(x_fit, y_fit, 'r-', label='regression')
 x0 = 3
 y0 = np.polyval([B_1, B_0], x0)
 plt.annotate(fr"拟合的直线方程为：y = {B_0:.3f} + {B_1:.3f}x", xy=(x0, y0), xytext=(-150, +30),
-             textcoords='offset points', fontsize=10,
+             textcoords='offset points', fontsize=10, color='blue',
              arrowprops=dict(arrowstyle='->', connectionstyle='arc3, rad=.2'))
 plt.savefig('Exa3-12.png')
 plt.show()

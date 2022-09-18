@@ -34,7 +34,7 @@ y_fit = a * x_fit ** b
 plt.plot(x_fit, y_fit, 'r-', label='regression')
 x0, y0 = 20, a * 20 ** b
 plt.annotate(fr"拟合的方程为：y = {a:.3f}x$^{{{b:.3f}}}$", xy=(x0, y0), xytext=(+30, +30),
-             textcoords='offset points', fontsize=10,
+             textcoords='offset points', fontsize=10, color='blue',
              arrowprops=dict(arrowstyle='->', connectionstyle='arc3, rad=.2'))
 plt.savefig('Exc3-16.png')
 plt.show()

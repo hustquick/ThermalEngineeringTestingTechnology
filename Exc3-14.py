@@ -24,7 +24,7 @@ plt.plot(x_fit, y_fit, 'r-', label='regression')
 x0 = 45
 y0 = np.polyval([B_1, B_0], x0)
 plt.annotate(fr"拟合的方程为：y = {B_0:.3f}$\times$(1 + {B_1:.3f}x)", xy=(x0, y0), xytext=(-250, +30),
-             textcoords='offset points', fontsize=10,
+             textcoords='offset points', fontsize=10, color='blue',
              arrowprops=dict(arrowstyle='->', connectionstyle='arc3, rad=.2'))
 plt.savefig('Exc3-14.png')
 plt.show()

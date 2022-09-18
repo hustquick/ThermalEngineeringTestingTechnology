@@ -13,7 +13,7 @@ S_A = sigma_A / np.sqrt(len(x_A))
 S_B = sigma_B / np.sqrt(len(x_B))
 lambda_A = 3 * S_A
 lambda_B = 3 * S_B
-print(f"实验者A的测温结果为：{x_bar_A:.2f} \pm {x_bar_B:.2f}")
+print(f"实验者A的测温结果为：{x_bar_A:.2f} \pm {lambda_A:.2f}")
 print(f"实验者B的测温结果为：{x_bar_B:.2f} \pm {lambda_B:.2f}")
 
 P_A = (1 / S_A ** 2) / ((1 / S_A ** 2) + (1 / S_B ** 2))
